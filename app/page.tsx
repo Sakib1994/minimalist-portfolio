@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { TbHome, TbMessage, TbUser } from "react-icons/tb";
 
@@ -12,7 +13,7 @@ export default function Home() {
     {
       name: "About",
       link: "/about",
-      icon: <TbUser  className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <TbUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
       name: "Contact",
@@ -27,6 +28,7 @@ export default function Home() {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
+        <RecentProjects />
       </div>
     </main>
   );

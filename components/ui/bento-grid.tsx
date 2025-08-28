@@ -1,12 +1,6 @@
 "use client"
 import { cn } from "@/lib/utils";
-import { BackgroundGradient } from "./background-gradient";
-import { GridGlobe } from "./grid-globe";
-import Lottie from "react-lottie";
-import animationData from "@/data/confetti.json";
-import { useState } from "react";
-import MagicButton, { PositionEnum } from "./magic-button";
-import { IoCopyOutline } from "react-icons/io5";
+import BentoGradientComponent from "./bento-item-gradient";
 
 export const BentoGrid = ({
   className,
@@ -48,23 +42,7 @@ export const BentoGridItem = ({
 }) => {
   const leftLists = ["ReactJS", "Nest.js", "Typescript"];
   const rightLists = ["HTMX", "Golang", "Postgres"];
-  const [copied, setCopied] = useState(false);
 
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  const handleCopy = () => {
-    const text = "mdnazmussakibcse@gmail.com";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    console.log(text, copied)
-  };
   return (
     <div
       className={cn(
@@ -102,32 +80,7 @@ export const BentoGridItem = ({
       </div>)
       }
       {id === 6 &&
-        // add background animation , remove the p tag
-        <BackgroundGradient>
-          <div className={`${titleClassName} transition duration-200 relative font-sans text-bold text-lg lg:text-2xl max-w-96 z-10`}>
-            {title}
-          </div>
-          <div className="mt-2 relative">
-            {/* button border magic from tailwind css buttons  */}
-            {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-            {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-            {/* add handleCopy() for the copy the text */}
-            <div
-              className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                }`}
-            >
-              {/* <img src="/confetti.gif" alt="confetti" /> */}
-              <Lottie options={defaultOptions} height={200} width={400} />
-            </div>
-            <MagicButton
-              title={copied ? "Email is Copied!" : "Copy my email address"}
-              icon={<IoCopyOutline />}
-              position={PositionEnum.Left}
-              handleClick={handleCopy}
-              otherClasses="!bg-[#161A31]"
-            />
-          </div>
-        </BackgroundGradient>
+        <BentoGradientComponent title={title} titleClassName={titleClassName}></BentoGradientComponent>
       }
       <div
         className={cn(

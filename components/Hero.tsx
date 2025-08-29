@@ -7,7 +7,7 @@ import Grid from "./Grid"
 
 const Hero = () => {
     return (
-        <div className="pb-20 pt-36">
+        <section className="pb-20 pt-36">
             <div >
                 <Spotlight ></Spotlight>
             </div>
@@ -46,7 +46,7 @@ const Hero = () => {
                 </p> */}
             </div>
             <Grid />
-        </div>
+        </section>
     )
 }
 

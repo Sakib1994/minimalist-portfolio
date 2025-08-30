@@ -4,14 +4,12 @@ import { projects } from '@/data'
 import React from 'react'
 import { PinContainer } from './ui/3d-pin'
 import { FaLocationArrow } from 'react-icons/fa';
+import { SectionHeader } from './SectionHeader';
 
 const RecentProjects = () => {
     return (
         <section className="py-20" id='projects'>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl text-center">
-                A Small Selection of{" "}
-                <span className="text-purple-400">Recent Projects</span>
-            </h1>
+            <SectionHeader regularText='A Small Selection of' purpleText='Recent Projects' />
             <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
 
                 {projects.map(({ id, title, des, link, img, iconLists }) => (
@@ -82,5 +80,4 @@ const RecentProjects = () => {
         </section>
     )
 }
-
 export default RecentProjects

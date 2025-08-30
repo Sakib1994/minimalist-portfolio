@@ -1,14 +1,12 @@
 import React from 'react'
 import { InfiniteMovingCards } from './ui/infinite-moving-cards'
 import { companies, testimonials } from '@/data'
+import { SectionHeader } from './SectionHeader'
 
 const Clients = () => {
     return (
         <section className="py-20" id="testimonials">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl text-center">
-                Kind words from {" "}
-                <span className="text-purple-400"> Satified Clients</span>
-            </h1>
+            <SectionHeader regularText='Kind words from' purpleText='Satified Clients' />
             <div className="h-[50vh] md:h-[30rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden max-lg:mt-10">
                 <InfiniteMovingCards
                     items={testimonials}
